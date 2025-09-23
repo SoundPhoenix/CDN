@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to RAF-CDN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to RAF-CDN</h1>
+            <h2>List of directories</h2>
+        </header>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search directories..." class="search-box">
+            <button onclick="clearSearch()" class="clear-btn">Clear</button>
+        </div>
+        
+        <div class="directories-container">
+            <div class="directory-grid" id="directoryGrid">
+                <!-- Directories will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="admin-panel">
+            <h3>Manage Directories</h3>
+            <div class="add-directory">
+                <input type="text" id="newDirName" placeholder="New directory name..." class="add-input">
+                <button onclick="addDirectory()" class="add-btn">Add Directory</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
