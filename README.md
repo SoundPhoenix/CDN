@@ -13,7 +13,7 @@ A modern, responsive web interface for browsing and managing CDN directories.
 
 ## Getting Started
 
-### Option 1: Simple File Server
+### Option 1: Simple File Server (Development)
 1. Open `index.html` directly in your web browser
 2. All functionality will work except for actual directory navigation
 
@@ -24,9 +24,34 @@ A modern, responsive web interface for browsing and managing CDN directories.
    ```
 2. Open your browser to `http://localhost:8000`
 
-### Option 3: Web Server Deployment
+### Option 3: Cloudflare Pages Deployment (Recommended)
+1. **Connect your repository**:
+   - Go to [Cloudflare Pages](https://pages.cloudflare.com/)
+   - Click "Create a project"
+   - Connect your GitHub repository
+
+2. **Configure build settings**:
+   - **Build command**: Leave empty (static site)
+   - **Build output directory**: `/` (root directory)
+   - **Root directory**: `/` (or leave empty)
+
+3. **Environment variables** (optional):
+   - No environment variables needed for basic setup
+
+4. **Deploy**:
+   - Click "Save and Deploy"
+   - Your site will be available at `https://your-project.pages.dev`
+
+### Option 4: Custom Domain on Cloudflare Pages
+1. After deploying to Cloudflare Pages
+2. Go to your project's "Custom domains" tab
+3. Add your custom domain
+4. Update the `wrangler.toml` file with your domain name
+
+### Option 5: Traditional Web Server Deployment
 1. Upload all files to your web server
-2. Access the site through your domain
+2. Ensure your server supports directory browsing or has proper index files
+3. Access the site through your domain
 
 ## Directory Structure
 
@@ -36,9 +61,20 @@ CDN/
 ├── style.css           # Styling and responsive design
 ├── script.js           # JavaScript functionality
 ├── server.py           # Local development server
+├── package.json        # Project configuration
+├── wrangler.toml       # Cloudflare Pages configuration
+├── _headers            # Cloudflare Pages headers
+├── _redirects          # Cloudflare Pages redirects
+├── .gitignore          # Git ignore file
 ├── RAF-Backend/        # Backend files directory
+│   ├── README.md       # Backend directory info
+│   └── index.html      # Backend directory listing
 ├── Assets/             # Assets directory
+│   ├── README.md       # Assets directory info
+│   └── index.html      # Assets directory listing
 ├── Videos/             # Videos directory
+│   ├── README.md       # Videos directory info
+│   └── index.html      # Videos directory listing
 └── README.md           # This file
 ```
 
@@ -82,6 +118,29 @@ Modify `style.css` to customize colors, fonts, and layout. The design uses CSS G
 
 ### Default Directories
 Edit the `directories` array in `script.js` to change the default directories that appear on first load.
+
+## Cloudflare Pages Features
+
+### Automatic HTTPS
+- All deployments include automatic HTTPS certificates
+- HTTP requests are automatically redirected to HTTPS
+
+### Global CDN
+- Your site is automatically distributed across Cloudflare's global network
+- Fast loading times worldwide
+
+### Custom Headers
+- Security headers are automatically applied via `_headers` file
+- Cache control headers optimize performance
+
+### URL Redirects
+- Directory paths are properly handled via `_redirects` file
+- Fallback routing ensures the SPA works correctly
+
+### Performance Optimization
+- Static assets are cached for optimal performance
+- Gzip compression is automatically applied
+- HTTP/2 and HTTP/3 support
 
 ## Browser Compatibility
 

@@ -1,0 +1,12 @@
+name = "raf-cdn"
+compatibility_date = "2024-01-01"
+
+[env.production]
+route = { pattern = "*", zone_name = "your-domain.com" }
+
+[site]
+bucket = "."
+entry-point = "index.html"
+
+# Build configuration for Cloudflare Pages
+# No build command needed for static site

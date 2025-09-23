@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos Directory - RAF-CDN</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+        .back-link:hover {
+            background: #5a67d8;
+        }
+        .file-list {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        .file-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-icon {
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Videos Directory</h1>
+            <h2>Video files and media content</h2>
+        </header>
+        
+        <a href="../" class="back-link">← Back to RAF-CDN</a>
+        
+        <div class="file-list">
+            <div class="file-item">
+                <span class="file-icon">📄</span>
+                <span>README.md</span>
+            </div>
+            <div class="file-item">
+                <span class="file-icon">🎥</span>
+                <span>sample-video.mp4</span>
+            </div>
+            <div class="file-item">
+                <span class="file-icon">🎬</span>
+                <span>promotional/</span>
+            </div>
+            <div class="file-item">
+                <span class="file-icon">📹</span>
+                <span>tutorials/</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

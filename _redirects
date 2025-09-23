@@ -1,0 +1,11 @@
+# Redirect directory paths to show directory listing
+/RAF-Backend/  /  200
+/Assets/       /  200  
+/Videos/       /  200
+
+# Handle any custom directories added by users
+# This allows the frontend to handle directory navigation
+/:path/        /  200
+
+# Fallback to index for any other routes
+/*             /index.html  200
