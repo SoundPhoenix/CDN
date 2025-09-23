@@ -41,9 +41,31 @@ function renderDirectories(dirsToRender = directories) {
 
 // Open directory
 function openDirectory(url) {
-    // In a real CDN, this would navigate to the directory
-    // For now, we'll show an alert
-    alert(`Opening directory: ${url}\n\nIn a real CDN setup, this would navigate to the directory contents.`);
+    // Check if we're in a Cloudflare Pages environment or have actual directories
+    // Try to navigate to the directory, fallback to alert if not accessible
+    
+    // First check if the directory exists by trying to fetch it
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                // Directory exists, navigate to it
+                window.location.href = url;
+            } else {
+                // Directory doesn't exist or isn't accessible, show info
+                showDirectoryInfo(url);
+            }
+        })
+        .catch(() => {
+            // Fetch failed, show info instead
+            showDirectoryInfo(url);
+        });
+}
+
+// Show directory information when direct access isn't available
+function showDirectoryInfo(url) {
+    const dirName = url.replace(/^\//, '').replace(/\/$/, '');
+    const message = `Directory: ${dirName}\nPath: ${url}\n\nThis would navigate to the directory contents in a deployed CDN environment.\n\nTo make directories accessible:\n1. Create the directory structure in your repository\n2. Add an index.html file in each directory\n3. Deploy to Cloudflare Pages`;
+    alert(message);
 }
 
 // Search functionality

@@ -1,0 +1,27 @@
+{
+  "name": "raf-cdn",
+  "version": "1.0.0",
+  "description": "RAF-CDN Directory Listing Website for Cloudflare Pages",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 server.py",
+    "build": "echo 'No build step required for static site'",
+    "deploy": "echo 'Deploy using Cloudflare Pages'"
+  },
+  "keywords": [
+    "cdn",
+    "directory-listing",
+    "static-site",
+    "cloudflare-pages"
+  ],
+  "author": "RAF-CDN",
+  "license": "GPL-3.0",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SoundPhoenix/CDN.git"
+  },
+  "homepage": "https://github.com/SoundPhoenix/CDN#readme"
+}
