@@ -1,0 +1,24 @@
+# Cache static assets for 1 year
+/style.css
+  Cache-Control: public, max-age=31536000, immutable
+  
+/script.js
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache directories for shorter period
+/RAF-Backend/*
+  Cache-Control: public, max-age=3600
+  
+/Assets/*
+  Cache-Control: public, max-age=3600
+  
+/Videos/*
+  Cache-Control: public, max-age=3600
+
+# Default headers for all files
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data:;
