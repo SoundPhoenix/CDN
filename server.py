@@ -65,26 +65,9 @@ class RAFCDNRequestHandler(http.server.SimpleHTTPRequestHandler):
                 if os.path.exists('.' + index_path):
                     self.path = index_path
             
-            # For root path, check if user is authenticated
+            # For root path, serve index.html (welcome page)
             if self.path == '/':
-                # If user has session, redirect to appropriate dashboard
-                auth_header = self.headers.get('Authorization')
-                if auth_header and auth_header.startswith('Bearer '):
-                    session_id = auth_header.split(' ', 1)[1]
-                    user_info = self.user_manager.get_user_from_session(session_id)
-                    if user_info:
-                        if user_info['role'] == 'admin':
-                            self.path = '/admin.html'
-                        else:
-                            self.path = '/user.html'
-                    else:
-                        self.path = '/login.html'
-                else:
-                    self.path = '/login.html'
-            
-            # Serve index.html for root path if no session
-            if self.path == '/':
-                self.path = '/login.html'
+                self.path = '/index.html'
                 
             return super().do_GET()
     
