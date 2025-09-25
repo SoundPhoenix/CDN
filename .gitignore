@@ -1,6 +1,17 @@
 # Server configuration files (user-specific)
 server.config.json
 
+# Authentication and user data
+users.json
+activity_logs.json
+
+# Uploaded videos (exclude from repo - too large)
+Videos/*.mp4
+Videos/*.avi
+Videos/*.mov
+Videos/*.mkv
+Videos/*.webm
+
 # Python cache
 __pycache__/
 *.py[cod]
