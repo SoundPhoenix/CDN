@@ -5,25 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to RAF-CDN</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .welcome-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .welcome-container h1 {
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+        
+        .welcome-container h2 {
+            margin-bottom: 40px;
+            color: #4a5568;
+            font-weight: 400;
+        }
+        
+        .login-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        
+        .login-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .description {
+            margin-top: 30px;
+            color: #718096;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Welcome to RAF-CDN</h1>
-            <h2>Please log in to access the system</h2>
-        </header>
-        
-        <div style="text-align: center; margin-top: 50px;">
-            <p>Redirecting to login page...</p>
-            <a href="/login.html" style="color: #667eea; text-decoration: none; font-weight: 600;">
-                Click here if not redirected automatically
+        <div class="welcome-container">
+            <header>
+                <h1>Welcome to RAF-CDN</h1>
+                <h2>Content Delivery Network</h2>
+            </header>
+            
+            <a href="/login.html" class="login-button">
+                Login to Access System
             </a>
+            
+            <div class="description">
+                <p>Please log in with your credentials to access the RAF-CDN system and manage your content.</p>
+            </div>
         </div>
     </div>
-    
-    <script>
-        // Redirect to login page
-        window.location.href = '/login.html';
-    </script>
 </body>
 </html>
